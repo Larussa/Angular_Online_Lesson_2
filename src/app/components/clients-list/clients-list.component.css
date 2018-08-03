@@ -1,0 +1,11 @@
+label span, p span {
+  color: red;
+  margin-left: 3px;
+}
+label, table th {
+  color: #007bff;
+}
+.card, .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #FFFAFA;
+}
+
