@@ -90,15 +90,17 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-12">
-            <label for="textarea">Comments</label>
+            <label for="textarea">Comments<span>*</span></label>
             <textarea
               class="form-control"
               id="textarea" rows="3"
               [(ngModel)] = 'item.comment'
+              [ngClass]="{'is-invalid':itemComment.errors && form.submitted}"
               #itemComment="ngModel"
-              name="comment">
+              name="comment"
+              required>
             </textarea>
-            <div class="invalid-feedback"></div>
+            <div class="invalid-feedback" [hidden]="!itemComment.errors?.required">Item comment required</div>
           </div>
         </div>
         <button type="submit" class="btn btn-outline-primary mb-3">Add Client</button>
